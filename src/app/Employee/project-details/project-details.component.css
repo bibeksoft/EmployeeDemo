@@ -1,0 +1,18 @@
+.header{
+    border: 1px solid grey;
+}
+h5 {
+    font-size: 15px;
+    border-bottom: 1px solid;
+    font-weight: bold;
+}
+.a1 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 4px;
+    box-shadow: 1px 0 5px 0;
+    cursor: pointer;
+}
+li.list-group-ite {
+    padding: 2px;
+}

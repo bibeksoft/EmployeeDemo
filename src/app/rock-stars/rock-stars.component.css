@@ -1,0 +1,68 @@
+.rockstar {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 15em;
+  display: inline-flex;
+  }
+
+  .rockstar li {
+    cursor: pointer;
+    position: relative;
+    left: 0;
+    background-color: #EEE;
+    margin: .5em;
+    padding: .3em 0;
+    height: 10em;
+    border-radius: 4px;
+    /*transform: skewY(10deg);*/
+  }
+  li:hover {
+    color: #607D8B;
+    background-color: #DDD;
+    left: .1em;
+    transition: 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: scale(1.1);
+   /* transform: skewY(5deg) ;*/
+
+ 
+  }
+  .rockstar li.selected:hover {
+    background-color: #BBD8DC;
+    color: white;
+  }
+  .rockstar .badge1 {
+    display: flex;
+    font-size: small;
+    color: white;
+    /*padding: 0 3em 0 0;*/
+    background-color: #337ab7;
+    /*line-height: 1.5em;*/
+    position: relative;
+    /*left: 0px;*/
+    top: -2px;
+    height: 3.2em;
+    border-radius: 4px 4px 0 0;
+  }
+  img.profilepic {
+    height: 100%;
+}
+.badge1 .pi{
+  margin: auto;
+}
+.badge2 {
+  display: flex;
+  font-size: small;
+  color: white;
+ /* padding: 0 3em 0 0;*/
+  background-color: #337ab7;
+ /* line-height: 1.5em;*/
+  position: relative;
+  /*left: 0px;*/
+  bottom: -2px;
+  height: 3.2em;
+  border-radius: 0 0 4px 4px ;
+}
+.badge2 .pi{
+  margin: auto;
+}

@@ -1,0 +1,26 @@
+<div id="myModal2" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+        <div class="media" *ngIf="selectQC">
+      <div class="media-left media-top">
+        <img src={{selectQC.profile_Path}} class="media-object" style="width:60px">
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading">{{selectQC.Name | uppercase}}</h4>
+        <blockquote class="blockquote" style="border-left: 5px solid #009688;"><p>{{selectQC.ID}}</p></blockquote>
+        <blockquote class="blockquote" style="border-left: 5px solid #006789;"><p>{{selectQC.Designation}}</p></blockquote>
+        <blockquote class="blockquote" style="border-left: 5px solid #963700;"><p>{{selectQC.Adress}}</p></blockquote>
+        <blockquote class="blockquote" style="border-left: 5px solid hsl(315, 100%, 29%);"><p>{{selectQC.DOB}}</p></blockquote>
+        <blockquote class="blockquote" style="border-left: 5px solid #ec0915;"><p>{{selectQC.Qualification}}</p></blockquote>
+        <blockquote class="blockquote" style="border-left: 5px solid #07a1dd;"><p>{{selectQC.ContactNo}}</p></blockquote>
+        <blockquote class="text-primary" style="border-left: 5px solid transparent;" >{{selectQC.Bio}}</blockquote>
+      </div>
+    </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+  </div>
+  </div>

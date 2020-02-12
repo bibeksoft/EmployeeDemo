@@ -1,0 +1,86 @@
+<div id="myModal" class="modal fade" role="dialog">
+        
+              
+                 
+        <div class="modal-dialog">
+                
+          <div class="modal-content">
+            
+<form class="form-horizontal" #myForm>
+        <h1 style="text-align: center;"> New Project</h1> 
+        <div class="modal-body">
+
+        <div class="form-group">           
+                <label for="pName" class="control-label col-sm-2">Project Name</label>
+               <div class="col-sm-10"><input class="form-control" type="text" id="pName" #pName/></div> 
+        </div>
+        <div class="form-group">
+                <label for="pId" class="control-label col-sm-2">Project Id</label>
+                <div class="col-sm-10"><input class="form-control"  type="text" id="pId" #pId/>  </div>
+            </div>
+      
+                <div class="form-group">
+                <label for="Client" class="control-label col-sm-2">Client</label>
+                <div class="col-sm-10"><input class="form-control"  type="text" id="Client" #Client/>  </div>
+            
+            </div>
+                <div class="form-group">
+                <label for="C_Date" class="control-label col-sm-2">StartDate</label>
+                <div class="col-sm-10"><input class="form-control"  type="date" id="C_Date" #C_Date/>  </div>
+            </div>
+                <div class="form-group">
+                    <label for="E_Date" class="control-label col-sm-2">EndDate</label>
+                    <div class="col-sm-10"><input class="form-control"  type="date" id="E_Date" #E_Date/>  </div>
+                </div>
+                    <div class="form-group">
+                
+                    <label for="Geo" class="control-label col-sm-2">GeoVertical</label>
+                    <div class="col-sm-10"><input class="form-control"  type="text" id="Geo" #Geo/>  </div>
+                </div>
+                    <div class="form-group">
+                            <label for="level" class="control-label col-sm-2" >Priority</label>
+                            <div class="col-sm-10 level">
+                            <div class="dropdown ">
+                                    <select class="form-control" #level>
+                                            <option>High</option>
+                                            <option>Medium</option>
+                                            <option>Low</option>
+                                         
+                                          </select>
+                                  </div>
+                                  </div>
+
+                        </div>
+        
+                            <div class="form-group">
+                    <label for="AssignTo" class="control-label col-sm-2">Assign To</label>
+                    <div class="col-sm-10"><input class="form-control"  type="text" id="AssignTo" #AssignTo/>  </div>
+                </div>
+                    <div class="form-group">
+                
+                        <label for="R_Manager" class="control-label col-sm-2">Manager</label>
+                        <div class="col-sm-10"><input class="form-control"  type="text" id="R_Manager" #R_Manager/>  </div>
+                    </div>
+                        <div class="form-group">
+                                <label for="status" class="control-label col-sm-2">Status</label>
+                                <div class="col-sm-10 status">
+                                <div class="dropdown">
+                                        <select class="form-control" #status>
+                                                <option>Queue</option>
+                                                <option>Progress</option>
+                                                <option>Completed</option>
+                                        </select>
+                                      </div>  
+                                    </div>     
+                </div>
+</div>
+    <div class="modal-footer">
+            <button type="button" class="btn btn-success" (click)="SaveDetails()">Save</button>
+            <button type="button" class="btn btn-warning" (click)="myForm.reset()">Clear</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+          </div>
+</form>
+</div>
+
+</div>
+         

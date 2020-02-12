@@ -1,0 +1,8 @@
+import {EmployeeDetails} from './EmployeeDetails'
+    export const UITeamDetails:EmployeeDetails[]=[
+     {ID:'401', Name:'Nitish',profile_Path:'assets/Profilepic/Male _Avtar.jpg',Designation:'Executive',Adress:'Attigupe', DOB:'00/00/0000',Qualification:'Bsc.',ContactNo:1234569870,Bio:'Lorie Smith is a Loan Officer at XYZ Bank, where Lorie processes loan applications from start to finish, including mortgage refinancing and educating clients about their different financing options'},
+     {ID:'402', Name:'Bibek',profile_Path:'assets/Profilepic/Male _Avtar.jpg',Designation:'Senior Manager',Adress:'RJNagar', DOB:'00/00/0000',Qualification:'Btech',ContactNo:1234569870,Bio:'Kate Hendricks is a Freelance Writer and Social Media Manager who helps finance professionals and Fin-tech startups build an audience and get more paying clients online'},
+     {ID:'403', Name:'Murgan',profile_Path:'assets/Profilepic/Male _Avtar.jpg',Designation:'Trainee',Adress:'Sunkdakate', DOB:'00/00/0000',Qualification:'Bsc.',ContactNo:1234569870,Bio:'Lorie has worked with reputable real estate agencies, including ReMax, Century 21, and Coldwell Banker, among others. Lorie helps homeowners and new buyers secure a loan that suits their budget and goals. You can expect 100% transparency, no horror stories, and nasty surprises when working with Lorie'},
+     {ID:'408', Name:'Ajay',profile_Path:'assets/Profilepic/Male _Avtar.jpg',Designation:'Trainee',Adress:'Mahalakshmi Layout', DOB:'00/00/0000',Qualification:'Btech',ContactNo:1234569870,Bio:'Kate Hendricks is a Freelance Writer and Social Media Manager who helps finance professionals and Fin-tech startups build an audience and get more paying clients online'}
+ 
+    ]

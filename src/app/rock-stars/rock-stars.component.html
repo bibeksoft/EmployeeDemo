@@ -1,0 +1,13 @@
+<div class="container-fluid">
+  <h1>Employee Performance Dashboard</h1>
+<ul class="rockstar list-group">
+  <li *ngFor="let rockstar of rockstars" 
+  [class.selected]="rockstar === selectRockstar"
+  (click)="onSelectRocStar(rockstar)" data-toggle="modal" data-target="#myModal">
+    <span class="badge1"><p class="pi">EmpID: {{rockstar.id}}</p></span> <img  class="profilepic" src={{rockstar.profile_pic}} /> 
+    <span class="badge2"><p class="pi">{{rockstar.name | uppercase}}</p></span></li>
+</ul>
+</div>
+<app-performance-details [rockstr]="selectRockstar" ></app-performance-details>
+
+

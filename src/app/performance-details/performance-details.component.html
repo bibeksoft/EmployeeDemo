@@ -1,0 +1,30 @@
+<div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div *ngIf="rockstr">
+              <ul class="list-group">
+              <li class="list-group-item active" style="display:flex;"><img  class="img-thumbnail profil-image" src={{rockstr.profile_pic}} alt={{rockstr.profile_pic}} style="max-width:100px;"/><h4 style="margin: 2em;">{{rockstr.name | uppercase}} </h4></li>
+               <!--<li class="list-group-item"><span class="badge1">Id:</span> {{rockstr.id}}</li>
+               <li class="list-group-item"><span class="badge1">Name:</span>{{rockstr.name}}</li>
+               <li class="list-group-item"><span class="badge1">Exp: </span>{{rockstr.Exp}} Year</li>
+               <li class="list-group-item"><span class="badge1">Hobbies: </span>{{rockstr.Hobies}}</li>-->
+               <li class="list-group-item "><span class="badge1" style="cursor: pointer;" (click)="signalSelected(rockstr.Performance)">View Report </span>
+               <!--<input class="performance_val"  style="display:none" value={{rockstr.Performance}} #Myinput/>-->
+               </li>
+              </ul>
+              
+      </div>
+          </div>
+        <div class="modal-body">
+          <canvas id="mychart" ></canvas>
+        </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+

@@ -1,0 +1,20 @@
+li{list-style: none;}
+ .badge1 {
+  display: inline-block;
+  font-size: 18px;
+  color: white;
+  background-color: #337ab7;
+  width: 20%;
+  line-height: 2.5em;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  text-align: center;
+  height: 2.2em;
+  margin-right: 10px;
+  border-radius: 5px;
+  }
+  .modal-dialog {
+    width: 60% !important;
+  }
+  

@@ -1,0 +1,7 @@
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    color: #f5f0f0;
+    background-color: #337ab7;
+    border-radius: 4px 4px 0px 0px;
+    font-weight: bolder;
+    
+}
