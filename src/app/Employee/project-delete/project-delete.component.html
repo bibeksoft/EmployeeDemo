@@ -1,1 +1,57 @@
-<p>project-delete works!</p>
+<div class="container">
+    <div class="row">
+            <label for="search">Select Id:</label>
+        <div class="form-group">
+                
+            <div class="col-sm-2">
+                
+            <div class="dropdown ">
+                    <select class="form-control search" #level >
+                <option *ngFor="let ProID of deleteDetails1">{{ProID.id}}</option>
+                   
+                          </select>
+                  </div>
+                  
+                  </div>
+                  <button  class="btn btn-default" click="deleteDetails($ event)">Search</button>
+
+        </div>
+        
+    </div>
+    
+    <div class="row">
+        <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>ID</th>
+                <th>Client</th>
+                <th>StartDate</th>
+                <th>EndDate</th>
+                 <th>Vertical</th>
+                  <th>Level</th>
+                   <th>Assigned To</th>
+                    <th>Manager</th>
+                      <th>Status</th>
+                        
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+               
+                 <td><p class="list-group-item1" *ngFor="let ProName of deleteDetails1">{{ProName.Pro_Name}}</p></td>
+                 
+                 <td><p class="list-group-item1" *ngFor="let ProClient of deleteDetails1">{{ProClient.Client}}</p></td>
+                 <td><p class="list-group-item1" *ngFor="let Cdate of deleteDetails1">{{Cdate.Commission_Date}} </p></td>
+                <td><p class="list-group-item1" *ngFor="let Edate of deleteDetails1">{{Edate.End_Date}} </p></td>
+                <td><p class="list-group-item1" *ngFor="let Geo of deleteDetails1">{{Geo.Geo_vertical}} </p></td>
+                <td><p class="list-group-item1" *ngFor="let PLevel of deleteDetails1" >{{PLevel.Prority_level}}</p></td>
+                <td><p class="list-group-item1" *ngFor="let Assign of deleteDetails1">{{Assign.AssignTo}} </p></td>
+                <td><p class="list-group-item1" *ngFor="let Manager of deleteDetails1">{{Manager.R_Manager}} </p></td>
+                <td><p class="list-group-item1" *ngFor="let Status of deleteDetails1" >{{Status.P_Status}} </p></td>
+                <td><p class="list-group-item1" *ngFor="let ProID of details1"><button class="btn btn-warning">Delete</p></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
