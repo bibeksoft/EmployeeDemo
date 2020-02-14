@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {ProjectDataService} from './Employee/project-details/project-data.service';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { ProjectAddComponent } from './Employee/project-add/project-add.component';
+import { ProjectDeleteComponent } from './Employee/project-delete/project-delete.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ProjectAddComponent } from './Employee/project-add/project-add.componen
     ProgramTeamComponent,
     SPTeamComponent,
     UITeamComponent,
-    ProjectAddComponent
+    ProjectAddComponent,
+    ProjectDeleteComponent
   ],
   imports: [
     BrowserModule,
