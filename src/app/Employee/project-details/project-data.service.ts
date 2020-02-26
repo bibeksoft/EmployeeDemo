@@ -8,7 +8,7 @@ import {InMemoryDbService} from 'angular-in-memory-web-api';
 export class ProjectDataService implements InMemoryDbService {
 
   constructor() { }
-  createDb(){
+ /* createDb(){
     const projectList=[
       {Pro_Name:'Contact lens', 
       Pro_id:'MK001', 
@@ -25,5 +25,5 @@ export class ProjectDataService implements InMemoryDbService {
     return (projectList);
     
 
-  }
+  }*/
 }
