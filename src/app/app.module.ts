@@ -12,10 +12,11 @@ import { ProgramTeamComponent } from './Employee/program-team/program-team.compo
 import { SPTeamComponent } from './Employee/spteam/spteam.component';
 import { UITeamComponent } from './Employee/uiteam/uiteam.component';
 import { HttpClientModule } from '@angular/common/http';
-import {ProjectDataService} from './Employee/project-details/project-data.service';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { ProjectAddComponent } from './Employee/project-add/project-add.component';
 import { ProjectDeleteComponent } from './Employee/project-delete/project-delete.component';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
+import {firebase_enviornment} from 'src/app/Employee/employee-details/EmployeeDetails'
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ProjectDeleteComponent } from './Employee/project-delete/project-delete
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
-    HttpClientInMemoryWebApiModule.forRoot(ProjectDataService)
+    AngularFirestoreModule,AngularFireModule.initializeApp(firebase_enviornment.firebase)
+   
     
   ],
   providers: [],
