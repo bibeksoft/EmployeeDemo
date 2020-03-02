@@ -14,9 +14,12 @@ import { UITeamComponent } from './Employee/uiteam/uiteam.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProjectAddComponent } from './Employee/project-add/project-add.component';
 import { ProjectDeleteComponent } from './Employee/project-delete/project-delete.component';
+import { ProjectupdateComponent } from './ProjectUpdate/projectupdate/projectupdate.component';
+import { ProjectupdateAddComponent } from './ProjectUpdate/projectupdate-add/projectupdate-add.component';
 import {AngularFireModule} from '@angular/fire';
-import {AngularFirestoreModule} from '@angular/fire/firestore';
-import {firebase_enviornment} from 'src/app/Employee/employee-details/EmployeeDetails'
+import {AngularFireDatabaseModule} from '@angular/fire/database';
+import {environment} from '../environments/environment'
+
 
 @NgModule({
   declarations: [
@@ -30,14 +33,18 @@ import {firebase_enviornment} from 'src/app/Employee/employee-details/EmployeeDe
     SPTeamComponent,
     UITeamComponent,
     ProjectAddComponent,
-    ProjectDeleteComponent
+    ProjectDeleteComponent,
+    ProjectupdateComponent,
+    ProjectupdateAddComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
-    AngularFirestoreModule,AngularFireModule.initializeApp(firebase_enviornment.firebase)
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
+  
    
     
   ],

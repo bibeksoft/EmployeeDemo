@@ -1,0 +1,54 @@
+<div class="container">
+    <h1>Project Report Dashboard</h1><br>
+  
+      <div class="container-fluid collapse navbar-collapse">
+            <div class="row">
+                <ul class="nav navbar-nav">
+                     <li class="list-group-ite"><a  
+                      class="btn-default a1" 
+                      data-toggle="modal" data-target="#myModal" (click)="showDetails()">Add </a></li>
+                     
+                </ul>
+            </div>
+                <div class="row">
+
+                </div>
+      </div>
+  <br>
+<div class="table-responsive ">          
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Project Number</th>
+              <th>Last Updated On</th>
+                 <th>Last Updated By</th>
+                    <th>Status</th>
+                    <th>Description</th>
+                      
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+             
+               <td><p class="list-group-item1" *ngFor="let projectName of porjectStatusReport">{{projectName.ProjectName}}</p></td>
+               <td><p class="list-group-item1" *ngFor="let projectnumber of porjectStatusReport">{{projectnumber.ProjectNumber}}</p></td>
+               <td><p class="list-group-item1" *ngFor="let lastupdatedon of porjectStatusReport">{{lastupdatedon.LastUpdatedOn}} </p></td>
+            <td><p class="list-group-item1" *ngFor="let Lastupdatedby of porjectStatusReport">{{Lastupdatedby.LastUpdatedBy}} </p></td>
+              <td><p class="list-group-item1" *ngFor="let status of porjectStatusReport"  
+              [ngClass]="{'btn-danger':Status.status == 'Closed',
+              'btn-success':Status.status == 'Active',
+              'btn-primary':Status.status == 'Development'
+          }"
+              >{{Status.status}} </p></td>
+                <td><p class="list-group-item1" *ngFor="let desc of porjectStatusReport">{{desc.Description}} </p></td>
+             
+            </tr>
+          </tbody>
+        </table>
+        </div>
+         
+       
+</div>
+<app-projectupdate-add *ngIf="clicked" (P_Details)="OnAddDetails()"></app-projectupdate-add>
+

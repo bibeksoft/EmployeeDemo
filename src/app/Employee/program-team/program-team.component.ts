@@ -1,6 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { EmployeeDetails } from '../employee-details/EmployeeDetails';
-import {AngularFirestore} from '@angular/fire/firestore'
+
 
 @Component({
   selector: 'app-program-team',
@@ -9,20 +9,15 @@ import {AngularFirestore} from '@angular/fire/firestore'
 })
 export class ProgramTeamComponent implements OnInit {
  @Input() selectProg:EmployeeDetails;
-details :any [];
-  constructor(private fire:AngularFirestore) { 
+ 
+  constructor() { 
+     
+   
     
-    
-   }
+  }
 
   ngOnInit() {
-    this.fire.collection('Employee').snapshotChanges().subscribe(Edetails=>
-      {
-        this.details=Edetails.map(X=>{
-          return  X.payload.doc.data();
-      })
-       
-      })
+   
   }
   
 
