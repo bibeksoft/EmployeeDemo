@@ -12,9 +12,14 @@ import { ProgramTeamComponent } from './Employee/program-team/program-team.compo
 import { SPTeamComponent } from './Employee/spteam/spteam.component';
 import { UITeamComponent } from './Employee/uiteam/uiteam.component';
 import { HttpClientModule } from '@angular/common/http';
-import {ProjectDataService} from './Employee/project-details/project-data.service';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { ProjectAddComponent } from './Employee/project-add/project-add.component';
+import { ProjectDeleteComponent } from './Employee/project-delete/project-delete.component';
+import { ProjectupdateComponent } from './ProjectUpdate/projectupdate/projectupdate.component';
+import { ProjectupdateAddComponent } from './ProjectUpdate/projectupdate-add/projectupdate-add.component';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFireDatabaseModule} from '@angular/fire/database';
+import {environment} from '../environments/environment'
+
 
 @NgModule({
   declarations: [
@@ -27,14 +32,20 @@ import { ProjectAddComponent } from './Employee/project-add/project-add.componen
     ProgramTeamComponent,
     SPTeamComponent,
     UITeamComponent,
-    ProjectAddComponent
+    ProjectAddComponent,
+    ProjectDeleteComponent,
+    ProjectupdateComponent,
+    ProjectupdateAddComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
-    HttpClientInMemoryWebApiModule.forRoot(ProjectDataService)
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
+  
+   
     
   ],
   providers: [],

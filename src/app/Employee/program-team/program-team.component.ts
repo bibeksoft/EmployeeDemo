@@ -1,5 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { EmployeeDetails } from '../employee-details/EmployeeDetails';
+
+
 @Component({
   selector: 'app-program-team',
   templateUrl: './program-team.component.html',
@@ -7,9 +9,16 @@ import { EmployeeDetails } from '../employee-details/EmployeeDetails';
 })
 export class ProgramTeamComponent implements OnInit {
  @Input() selectProg:EmployeeDetails;
-  constructor() { }
+ 
+  constructor() { 
+     
+   
+    
+  }
 
   ngOnInit() {
+   
   }
+  
 
 }

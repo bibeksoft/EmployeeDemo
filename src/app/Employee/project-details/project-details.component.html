@@ -7,7 +7,10 @@
                      <li class="list-group-ite"><a  
                       class="btn-default a1" 
                       data-toggle="modal" data-target="#myModal" (click)="addClicked()">Add </a></li>
-                     <li class="list-group-ite"> <a  data-toggle="button" class="btn-danger a1">Delete </a></li>
+                     <li class="list-group-ite"> <a  data-toggle="button" 
+                      class="btn-danger a1" 
+                      (click)="deleteClicked()"
+                      >Delete </a></li>
                      <li class="list-group-ite"><a  data-toggle="button" class="btn-primary a1">Edit</a></li>
                 </ul>
             </div>
@@ -65,3 +68,4 @@
        
 </div>
 <app-project-add *ngIf="clicked" (P_Details)="OnAddDetails($event)"></app-project-add>
+<app-project-delete *ngIf="delClicked"(Delete_Project)="OnDeletDetails($event)"></app-project-delete>

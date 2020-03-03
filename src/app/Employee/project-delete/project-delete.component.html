@@ -1,0 +1,57 @@
+<div class="container">
+  <h1>Delete Project Details</h1>
+    <div class="row">
+        <div class="form-group">
+                
+            <div class="col-sm-2">
+                
+            <div class="dropdown " >
+                    <select class="form-control " #searchID  >
+                <option *ngFor="let ProID of deleteDetails1" [class.selected]="ProID === ProID" (change)="Ondelete(ProID)">{{ProID.Pro_id}}</option>
+                   
+                          </select>
+                         
+                  </div>
+                  
+                  </div>
+                  <button  class="btn btn-default"  >Search</button>
+
+        </div>
+        
+    </div>
+    
+    <div class="row" >
+        <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>ID</th>
+                <th>Client</th>
+                <th>StartDate</th>
+                <th>EndDate</th>
+                 <th>Vertical</th>
+                  <th>Level</th>
+                   <th>Assigned To</th>
+                    <th>Manager</th>
+                      <th>Action</th>
+                        
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let ProName of ProID">
+               
+                 <td>{{ProName.Pro_Name}}</td>
+                 <td>{{ProName.Client}}</td>
+                 <td>{{ProName.Commission_Date}}</td>
+                <td>{{ProName.End_Date}}</td>
+                <td>{{ProName.Geo_vertical}}</td>
+                <td>{{ProName.Prority_level}}</td>
+                <td>{{ProName.AssignTo}}</td>
+                <td>{{ProName.R_Manager}}</td>
+                <td>{{ProName.P_Status}}</td>
+                <td><button class="btn btn-warning" (click)="DeleteProject()">Delete</button></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
