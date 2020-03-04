@@ -13,7 +13,8 @@ export class ProjectupdateAddComponent implements OnInit {
   
   projectDetails: ProjectModel = new ProjectModel();
   submitted = false;
-  updateDate=new Date();
+  updateDate=new Date().toISOString().slice(0, 16);
+  
  
 
   constructor(private dataDB:ProjectupdateService) { }

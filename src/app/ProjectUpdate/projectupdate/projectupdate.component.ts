@@ -12,7 +12,7 @@ import {ProjectModel} from '../project-model';
 export class ProjectupdateComponent implements OnInit {
   clicked=false;
   porjectStatusReport: any; 
-  @Input() ProjectModelkey: ProjectModel;
+  ProjectModelkey: any;
   constructor(private projectReportService:ProjectupdateService) { }
   showDetails(){
     this.clicked=true;
@@ -24,12 +24,14 @@ export class ProjectupdateComponent implements OnInit {
     map(e=>
      e.map(x=>
        ({key:x.payload.key,
-        ...x.payload.val() })))).subscribe(ex=>{this.porjectStatusReport=ex;})
+        
+        ...x.payload.val() })))).subscribe(ex=>{this.porjectStatusReport=ex;
+          })
   }
   deleteProjectStatusReport() {
-
-    
-    this.projectReportService.deleteProjectReport(this.ProjectModelkey.key)
+    const keyvalue=this.porjectStatusReport.$key;
+    console.log(keyvalue);
+    this.projectReportService.deleteProjectReport("-M1_J6Hjapgfb5eAI0Dr")
     //.catch(erro => console.log(erro))
     
     

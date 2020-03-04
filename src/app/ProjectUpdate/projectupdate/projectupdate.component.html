@@ -25,8 +25,8 @@
                  <th>Updated By</th>
                     <th>Status</th>
                     <th>Description</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+                    <th colspan="2" style="text-align: center">Action</th>
+                    
                     
                     
                       
@@ -45,11 +45,11 @@
           }"
               >{{status.Status}} </p></td>
                 <td><p class="list-group-item1" *ngFor="let desc of porjectStatusReport">{{desc.Description}} </p></td>
-                <td>
+                <td >
                     <p  style="cursor: pointer;"  *ngFor="let e of porjectStatusReport"><i class="fa fa-wrench" style="font-size:22px;color:rgb(5, 64, 143)" (click)='update' >                     
                     </i></p>
                   </td>
-                  <td>
+                  <td >
                       <p  style="cursor: pointer;" *ngFor="let e of porjectStatusReport"><i class="fa fa-trash-o" style="font-size:22px;color:red" (click)='deleteProjectStatusReport()' >
                       </i></p>
                     </td>
