@@ -19,31 +19,43 @@
         <table class="table table-bordered">
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Project Number</th>
-              <th>Last Updated On</th>
-                 <th>Last Updated By</th>
+              <th>Project</th>
+              <th>ProjectID</th>
+              <th>Updated On</th>
+                 <th>Updated By</th>
                     <th>Status</th>
                     <th>Description</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                    
+                    
                       
             </tr>
           </thead>
           <tbody>
             <tr>
-             
                <td><p class="list-group-item1" *ngFor="let projectName of porjectStatusReport">{{projectName.ProjectName}}</p></td>
                <td><p class="list-group-item1" *ngFor="let projectnumber of porjectStatusReport">{{projectnumber.ProjectNumber}}</p></td>
                <td><p class="list-group-item1" *ngFor="let lastupdatedon of porjectStatusReport">{{lastupdatedon.LastUpdatedOn}} </p></td>
             <td><p class="list-group-item1" *ngFor="let Lastupdatedby of porjectStatusReport">{{Lastupdatedby.LastUpdatedBy}} </p></td>
               <td><p class="list-group-item1" *ngFor="let status of porjectStatusReport"  
-              [ngClass]="{'btn-danger':Status.status == 'Closed',
-              'btn-success':Status.status == 'Active',
-              'btn-primary':Status.status == 'Development'
+              [ngClass]="{'btn-danger':status.Status == 'Closed',
+              'btn-success':status.Status == 'Active',
+              'btn-primary':status.Status == 'Development'
           }"
-              >{{Status.status}} </p></td>
+              >{{status.Status}} </p></td>
                 <td><p class="list-group-item1" *ngFor="let desc of porjectStatusReport">{{desc.Description}} </p></td>
-             
+                <td>
+                    <p  style="cursor: pointer;"  *ngFor="let e of porjectStatusReport"><i class="fa fa-wrench" style="font-size:22px;color:rgb(5, 64, 143)" (click)='update' >                     
+                    </i></p>
+                  </td>
+                  <td>
+                      <p  style="cursor: pointer;" *ngFor="let e of porjectStatusReport"><i class="fa fa-trash-o" style="font-size:22px;color:red" (click)='deleteProjectStatusReport()' >
+                      </i></p>
+                    </td>
+               
             </tr>
+            
           </tbody>
         </table>
         </div>

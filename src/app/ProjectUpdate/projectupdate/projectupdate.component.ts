@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import {ProjectupdateService} from '../projectupdate.service';
 import { map } from 'rxjs/operators';
+import {ProjectModel} from '../project-model';
 
 
 @Component({
@@ -11,29 +12,29 @@ import { map } from 'rxjs/operators';
 export class ProjectupdateComponent implements OnInit {
   clicked=false;
   porjectStatusReport: any; 
+  @Input() ProjectModelkey: ProjectModel;
   constructor(private projectReportService:ProjectupdateService) { }
   showDetails(){
     this.clicked=true;
   }
   ngOnInit() {
     //view ProjectStatus on page load
-    this.projectReportService.getProjectReport().snapshotChanges().pipe(
-      map(vale=>{
-        vale.map(values=>(
-          {
-            key:values.payload.key,
-            ...values.payload.val()
-        }
-        )
+    //view data
+   this.projectReportService.getProjectReport().snapshotChanges().pipe(
+    map(e=>
+     e.map(x=>
+       ({key:x.payload.key,
+        ...x.payload.val() })))).subscribe(ex=>{this.porjectStatusReport=ex;})
+  }
+  deleteProjectStatusReport() {
 
-      )
-      })
-    ).subscribe(reprotValues=>{
-      this.porjectStatusReport=reprotValues;
-    }
-
-    )
+    
+    this.projectReportService.deleteProjectReport(this.ProjectModelkey.key)
+    //.catch(erro => console.log(erro))
+    
     
   }
-
+ 
 }
+
+
