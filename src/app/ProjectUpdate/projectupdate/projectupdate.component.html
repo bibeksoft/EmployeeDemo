@@ -6,7 +6,7 @@
                 <ul class="nav navbar-nav">
                      <li class="list-group-ite"><a  
                       class="btn-default a1" 
-                      data-toggle="modal" data-target="#myModal" (click)="showDetails()">Add </a></li>
+                      data-toggle="modal" data-target="#myModal" (click)="OnAddClick()">Add </a></li>
                      
                 </ul>
             </div>
@@ -46,11 +46,13 @@
               >{{status.Status}} </p></td>
                 <td><p class="list-group-item1" *ngFor="let desc of porjectStatusReport">{{desc.Description}} </p></td>
                 <td >
-                    <p  style="cursor: pointer;"  *ngFor="let e of porjectStatusReport"><i class="fa fa-wrench" style="font-size:22px;color:rgb(5, 64, 143)" (click)='update' >                     
+                    <p  style="cursor: pointer;"  *ngFor="let UpdateKey of porjectStatusReport"><i class="fa fa-wrench" 
+                      style="font-size:22px;color:rgb(0, 85, 196)" data-toggle="modal" data-target="#myModal1" (click)='OnUpdateClick($event,UpdateKey.key)' >                     
                     </i></p>
                   </td>
                   <td >
-                      <p  style="cursor: pointer;" *ngFor="let e of porjectStatusReport"><i class="fa fa-trash-o" style="font-size:22px;color:red" (click)='deleteProjectStatusReport()' >
+                      <p  style="cursor: pointer;" *ngFor="let ex of porjectStatusReport"><i class="fa fa-trash-o" style="font-size:22px;color:red" 
+                        (click)='deleteProjectStatusReport($event,ex.key)' >
                       </i></p>
                     </td>
                
@@ -62,5 +64,61 @@
          
        
 </div>
-<app-projectupdate-add *ngIf="clicked" (P_Details)="OnAddDetails()"></app-projectupdate-add>
+<app-projectupdate-add *ngIf="AddClicked"></app-projectupdate-add>
+<!--<app-projectupdate-edit *ngIf="UpdateClicked" ></app-projectupdate-edit>-->
+<div id="myModal1" class="modal fade" role="dialog" *ngIf="UpdateClicked">
+
+  <div class="modal-dialog">
+
+    <div class="modal-content" >
+
+      <h3>Update Data for...</h3>
+<div  style="width: 300px;padding-left: 15px" class="model-body">
+<form (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="ProjectName">ProjectName</label>
+    <span  class="form-control" readonly required 
+     name="ProjectName">{{porjectStatusReport.ProjectName}}</span>
+  </div>
+
+  <div class="form-group" >
+    <label for="ProjectNumber">ProjectNumber</label>
+    <span type="text" class="form-control"  readonly required 
+     name="ProjectNumber">{{porjectStatusReport.ProjectNumber}}</span>
+  </div>
+  <div class="form-group">
+      <label for="LastUpdatedOn">LastUpdatedOn</label>
+      <input type="text" class="form-control" readonly required  
+       name="LastUpdatedOn" #LastUpdatedOn [(ngModel)]="porjectStatusReport.LastUpdatedOn">
+    </div>
+ 
+    <div class="form-group">
+      <label for="LastUpdatedBy">LastUpdatedBy</label>
+      <input type="text" class="form-control"  required  
+      name="LastUpdatedBy" #LastUpdatedBy>
+    </div>
+   
+    <div class="form-group">
+      <label for="Status">Status</label>
+      <select class="form-control"  name="Status" #Status>
+                      <option>Active</option>
+                       <option>Closed</option>
+                     <option>Development</option>
+                      </select>
+    </div>
+    <div class="form-group">
+      <label for="Description">Description</label>
+      <textarea type="text" cols="5" rows="5" class="form-control" 
+      name="Description" #Description></textarea>
+    </div>
+    <div class="modal-footer">
+  <button type="submit" class="btn btn-success">Update</button>
+  <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+
+</div>
 
