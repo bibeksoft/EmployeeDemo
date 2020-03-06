@@ -13,7 +13,7 @@ export class ProjectupdateAddComponent implements OnInit {
   
   projectDetails: ProjectModel = new ProjectModel();
   submitted = false;
-  updateDate=new Date().toISOString().slice(0, 16);
+ // updateDate=new Date().toISOString().slice(0, 16);
   
  
 
@@ -21,7 +21,7 @@ export class ProjectupdateAddComponent implements OnInit {
  
   ngOnInit() {
    
-    console.log(this.updateDate)
+   // console.log(this.updateDate)
   }
   newprojectDetails(): void {
     this.submitted = true;

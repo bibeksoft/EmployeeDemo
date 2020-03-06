@@ -47,7 +47,7 @@
                 <td><p class="list-group-item1" *ngFor="let desc of porjectStatusReport">{{desc.Description}} </p></td>
                 <td >
                     <p  style="cursor: pointer;"  *ngFor="let UpdateKey of porjectStatusReport"><i class="fa fa-wrench" 
-                      style="font-size:22px;color:rgb(0, 85, 196)" data-toggle="modal" data-target="#myModal1" (click)='OnUpdateClick($event,UpdateKey.key)' >                     
+                      style="font-size:22px;color:rgb(0, 85, 196)" data-toggle="modal" data-target="#myModal1" (click)='OnUpdateClick($event,UpdateKey)' >                     
                     </i></p>
                   </td>
                   <td >
@@ -78,29 +78,31 @@
   <div class="form-group">
     <label for="ProjectName">ProjectName</label>
     <span  class="form-control" readonly required 
-     name="ProjectName">{{porjectStatusReport.ProjectName}}</span>
+     name="ProjectName">{{ProjectModelkey.ProjectName}}</span>
   </div>
 
   <div class="form-group" >
     <label for="ProjectNumber">ProjectNumber</label>
     <span type="text" class="form-control"  readonly required 
-     name="ProjectNumber">{{porjectStatusReport.ProjectNumber}}</span>
+     name="ProjectNumber">{{ProjectModelkey.ProjectNumber}}</span>
   </div>
   <div class="form-group">
       <label for="LastUpdatedOn">LastUpdatedOn</label>
       <input type="text" class="form-control" readonly required  
-       name="LastUpdatedOn" #LastUpdatedOn [(ngModel)]="porjectStatusReport.LastUpdatedOn">
+       name="LastUpdatedOn" #LastUpdatedOn [(ngModel)]="NewDate.LastUpdatedOn">
     </div>
  
     <div class="form-group">
       <label for="LastUpdatedBy">LastUpdatedBy</label>
       <input type="text" class="form-control"  required  
-      name="LastUpdatedBy" #LastUpdatedBy>
+      name="LastUpdatedBy" #LastUpdatedBy [(ngModel)]="ProjectModelkey.LastUpdatedBy">
     </div>
    
     <div class="form-group">
       <label for="Status">Status</label>
-      <select class="form-control"  name="Status" #Status>
+      <select class="form-control"  name="Status" #Status 
+      [(ngModel)]="ProjectModelkey.Status"
+      >
                       <option>Active</option>
                        <option>Closed</option>
                      <option>Development</option>
@@ -109,10 +111,12 @@
     <div class="form-group">
       <label for="Description">Description</label>
       <textarea type="text" cols="5" rows="5" class="form-control" 
-      name="Description" #Description></textarea>
+      name="Description" #Description
+      [(ngModel)]="ProjectModelkey.Description"
+      ></textarea>
     </div>
     <div class="modal-footer">
-  <button type="submit" class="btn btn-success">Update</button>
+  <button type="submit" class="btn btn-success" (click)="UpdateProjectStatusReport()">Update</button>
   <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
 </div>
 </form>

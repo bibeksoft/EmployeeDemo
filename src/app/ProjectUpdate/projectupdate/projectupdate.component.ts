@@ -13,6 +13,8 @@ export class ProjectupdateComponent implements OnInit {
   AddClicked=false;
   UpdateClicked=false;
   porjectStatusReport: any; 
+  NewDate: ProjectModel = new ProjectModel();
+
   ProjectModelkey: any;
   @ViewChild('LastUpdatedOn',{static:false})LastUpdatedOn:ElementRef;
   @ViewChild('LastUpdatedBy',{static:false})LastUpdatedBy:ElementRef;
@@ -45,13 +47,13 @@ export class ProjectupdateComponent implements OnInit {
     
     
   }
-  UpdateProjectStatusReport(ProjectModelkey)
+  UpdateProjectStatusReport()
   {
     const updateDate=this.LastUpdatedOn.nativeElement.value;
     const updatedBy=this.LastUpdatedBy.nativeElement.value;
     const updateStatus=this.Status.nativeElement.value;
     const updateDateescription=this.Description.nativeElement.value;
-    this.projectReportService.updateProjectReport(ProjectModelkey,{LastUpdatedOn:updateDate, 
+    this.projectReportService.updateProjectReport(this.ProjectModelkey.key,{LastUpdatedOn:updateDate, 
       LastUpdatedBy:updatedBy,Status:updateStatus,Description:updateDateescription
     })
   }
