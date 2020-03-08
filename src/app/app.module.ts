@@ -18,7 +18,7 @@ import { ProjectupdateComponent } from './ProjectUpdate/projectupdate/projectupd
 import { ProjectupdateAddComponent } from './ProjectUpdate/projectupdate-add/projectupdate-add.component';
 import {AngularFireModule} from '@angular/fire';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
-import {environment} from '../environments/environment'
+import {environment} from '../environments/environment';
 
 
 @NgModule({

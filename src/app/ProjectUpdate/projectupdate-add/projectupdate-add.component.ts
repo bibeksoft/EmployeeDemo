@@ -1,7 +1,7 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit,ViewChild,ElementRef,EventEmitter} from '@angular/core';
 import{ProjectupdateService} from '../projectupdate.service';
-import {ProjectModel} from '../project-model'
-import { FormsModule } from '@angular/forms';
+import {ProjectModel} from '../project-model';
+
 
 @Component({
   selector: 'app-projectupdate-add',
@@ -9,18 +9,34 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./projectupdate-add.component.css']
 })
 export class ProjectupdateAddComponent implements OnInit {
-  addProjectDetails=new ProjectModel();
-  updateDate;
-
+  
+  
+  projectDetails: ProjectModel = new ProjectModel();
+  submitted = false;
+ // updateDate=new Date().toISOString().slice(0, 16);
+  
+ 
 
   constructor(private dataDB:ProjectupdateService) { }
-
+ 
   ngOnInit() {
-    this.updateDate=new Date().toLocaleTimeString;
-    console.log(this.updateDate)
+   
+   // console.log(this.updateDate)
   }
-  OnSaveProjectDetails(){
-    this.dataDB.addProjectReport(this.addProjectDetails)
+  newprojectDetails(): void {
+    this.submitted = true;
+    this.projectDetails = new ProjectModel();
   }
+ 
+  OnSaveProjectDetails() {
+   
+    this.dataDB.addProjectReport(this.projectDetails);
+    this.projectDetails = new ProjectModel();
+  }
+ 
+  onSubmit() {
+    this.submitted = false;
+    this.OnSaveProjectDetails();
+}
 
 }
